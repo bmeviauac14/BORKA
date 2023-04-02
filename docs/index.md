@@ -1,4 +1,4 @@
-# BORKA (Beágyazott operációs rendszerek és kliens alkalmazások)
+# Beágyazott operációs rendszerek és kliens alkalmazások (BORKA)
 
 Gyakorlati anyagok és házi feladatok a BMEVIAUAC07 és BMEVIAUAC14 Beágyazott operációs rendszerek és kliens alkalmazások c. tárgyakhoz.
 

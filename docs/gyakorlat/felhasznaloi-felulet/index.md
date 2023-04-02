@@ -1,7 +1,7 @@
 ---
 authors: rajacsicstamas
 ---
-# 3. A felhasználói felület kialakítása
+# A felhasználói felület kialakítása
 
 ## A gyakorlat célja
 

@@ -1,7 +1,7 @@
 ---
 authors: bzolka
 ---
-# 6. Document-View architektúra
+# Document-View architektúra
 
 ## A gyakorlat célja
 

@@ -1,4 +1,4 @@
-site_name: BMEVIAUAC14 BORKA (Beágyazott operációs rendszerek és kliens alkalmazások)
+site_name: Beágyazott operációs rendszerek és kliens alkalmazások
 site_author: Benedek Zoltán
 copyright: Copyright &copy; BME VIK AUT
 repo_name: bmeviauac14/borka
@@ -92,4 +92,3 @@ nav:
       - gyakorlat/doc-view/index.md    
   - "Önálló/házi feladatok":
       - 'Útmutató': hazi/index.md
-      - 'Fejlesztőkörnyezet': hazi/fejlesztokornyezet/index.md
