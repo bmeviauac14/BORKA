@@ -14,7 +14,7 @@ A gyakorlat céljai:
 
 A kapcsolódó előadások és korábbi gyakorlatok anyaga:
 
-- UML alapú modellezés (1. gyakorlat)
+- UML alapú modellezés
 - Windows Forms alkalmazásfejlesztés
 - Szoftverarchitektúrák (Document-View architektúra)
 

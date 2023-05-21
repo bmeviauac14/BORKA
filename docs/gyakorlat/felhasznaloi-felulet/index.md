@@ -14,7 +14,7 @@ A gyakorlat célja egy látványos, gyors alkalmazásfejlesztés bemutatása, me
 - TreeView
 - ListView  
 
-Kapcsolódó előadások: 3-4. előadás – Vastagkliens alkalmazások fejlesztése.
+Kapcsolódó előadások: Vastagkliens alkalmazások fejlesztése.
 
 ## Előfeltételek
 

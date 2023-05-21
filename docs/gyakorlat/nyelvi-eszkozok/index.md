@@ -16,7 +16,7 @@ A gyakorlat során a hallgatók megismerkednek a legfontosabb modern, a .NET kö
 - Generikus típus (generic type)
 - Néhány további nyelvi konstrukció
 
-Kapcsolódó előadások: a 2. előadás és a 3. előadás eleje – Nyelvi eszközök.
+Kapcsolódó előadások: Nyelvi eszközök.
 
 ## Előfeltételek
 
