@@ -49,13 +49,13 @@ A feladat során egy olyan Windows Forms alkalmazást készítünk el, amely egy
 
 1. Indítsuk el a Visual Studio 2022-t
 
-2. Hozzunk létre egy C# nyelvű, *Windows Forms* típusú alkalmazást, mégpedig **.NET 6** platformra.
+2. Hozzunk létre egy C# nyelvű, *Windows Forms* típusú alkalmazást, mégpedig **.NET** platformra.
     1. Ehhez a VS indítóablakában jobb oldalt a *Create new project* gombon kell kattintani, majd a projekt létrehozó varázslóban a *Windows Forms App* sablont kell kiválasztani. Lényeges, hogy **NE** a *Windows Forms App (.NETFramework)* legyen! A sablon kikereséséhez használjuk az ablak kereső/szűrőmezőit, amennyiben szükséges. Kattintsunk a Next gombra.
     2. A megjelenő oldalon
         1. A *Projekt name* és *Solution name* legyen `HelloWorldWF`
         2. Az útvonal a laborgépeken: `C:\Work\` alatt egy mappa, mely a saját nevünk vagy Neptun kódunk szerint van nevezve.
         3. Next gombbal következő oldalra váltás
-    3. A Framework mezőben válasszuk ki a *.NET 6.0 (Long term support)*-ot.
+    3. A Framework mezőben válasszuk ki a *.NET 8.0 (Long term support)*-ot.
 
     Futtassuk a kiinduló projektet, hogy lássuk, mit biztosít a kiinduló alkalmazáskeret (nem sokat, van egy egyszerű ablak). Állítsuk le a futó alkalmazást.
 
