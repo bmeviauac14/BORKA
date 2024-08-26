@@ -538,10 +538,7 @@ Vagyis bemenetként egy olyan típusú változót vár, mint a listaelemek típu
 
 ## 6. Feladat – Lambda kifejezések
 
-Az érintett témakörök az előadásanyagban részletesen szerepelnek, itt nem ismételjük meg őket Lásd „Előadás 02 - Nyelvi eszközök.pdf” dokumentum "Lambda expression (lambda kifejezés)" fejezete. A kulcselem a `=>` (lambda operátor), mely segítségével **lambda kifejezések**, vagyis névtelen függvények definiálására van lehetőség.
-
-!!! note "`Action és Func`"
-      A .NET beépített `Func` és `Action` generikus delegate típusokra itt idő hiányában nem térünk ki. Ettől még beletartoznak az alapanyagba!
+A kulcselem a `=>` (lambda operátor), mely segítségével **lambda kifejezések**, vagyis névtelen függvények definiálására van lehetőség.
 
 Az előző, 5. feladatot oldjuk meg a következőképpen: ne adjunk meg külön szűrőfüggvényt, hanem a szűrési logikát egy lambda kifejezés formájában adjuk meg a `FindAll` műveletnek.
 
@@ -569,7 +566,51 @@ A következő egyszerűsítéseket eszközöltük:
 - a paraméter körüli zárójelet elhagyhattuk (mert csak egy paraméter van)
 - a `=>` jobb oldalán elhagyhattuk a {} zárójeleket és a `return`-t (mert egyetlen kifejezésből állt a függvény törzse, mellyel a függvény visszatér).
 
-## 7. További nyelvi konstrukciók
+!!! note "`Action és Func`"
+      A .NET beépített `Func` és `Action` generikus delegate típusokra a tárgy keretében nem térünk ki.
+
+
+## 7. Feladat – Generikus osztályok
+
+Megjegyzés: erre a feladatra jó eséllyel nem marad idő. Ez esetben célszerű a feladatot gyakorlásképpen otthon elvégezni.
+
+A .NET generikus osztályai hasonlítanak C++ nyelv template osztályaihoz, de közelebb állnak a Java-ban már megismert generikus osztályokhoz. A segítségükkel általános (több típusra is működő), de ugyanakkor típusbiztos osztályokat hozhatunk létre. Generikus osztályok nélkül, ha általánosan szeretnénk kezelni egy problémát, akkor `object` típusú adatokat használunk (mert .NET-ben minden osztály az `object` osztályból származik). Ez a helyzet például az `ArrayList`-tel is, ami egy általános célú gyűjtemény, tetszőleges, `object` típusú elemek tárolására alkalmas. Lássunk egy példát az `ArrayList` használatára:
+
+```csharp
+var list = new ArrayList();
+list.Add(1);
+list.Add(2);
+list.Add(3);
+for (int n = 0; n < list.Count; n++)
+{
+    // Castolni kell, különben nem fordul
+    int i = (int)list[n];
+    Console.WriteLine($"Value: {i}");
+}
+```
+
+A fenti megoldással a következő problémák adódnak:
+
+- Az `ArrayList` minden egyes elemet `object`-ként tárol.
+- Amikor hozzá szeretnénk férni a lista egy eleméhez, mindig a megfelelő típusúvá kell cast-olni.
+- Nem típusbiztos. A fenti példában semmi nem akadályoz meg abban (és semmilyen hibaüzenet sem jelzi), hogy az `int` típusú adatok mellé  beszúrjunk a listába egy másik típusú objektumot. Ilyenkor csak a lista bejárása során kapnánk hibát, amikor a nem `int` típust `int` típusúra próbálunk castolni. Generikus gyűjtemények használatakor az ilyen hibák már a fordítás során kiderülnek.
+- Érték típusú adatok tárolásakor a lista lassabban működik, mert az érték típust először be kell dobozolni (boxing), hogy az `object`-ként (azaz referencia típusként) tárolható legyen.
+
+A fenti probléma megoldása egy generikus lista használatával a következőképpen néz ki (a gyakorlat során csak a kiemelt sort módosítsuk a korábban begépelt példában):
+
+```csharp hl_lines="1 7"
+var list = new List<int>();
+list.Add(1);
+list.Add(2);
+list.Add(3);
+for (int n = 0; n < list.Count; n++)
+{
+    int i = list[n]; // Nem kell cast-olni
+    Console.WriteLine($"Value: {i}");
+}
+```
+
+## 8. További nyelvi konstrukciók - opcionális témakörök (nem tananyag)
 
 Az alábbiakban kitekintünk néhány olyan C# nyelvi elemre, melyek a napi programozási feladatok során egyre gyakrabban használatosak. A gyakorlat során jó eséllyel már nem marad idő ezek áttekintésére.
 
@@ -650,44 +691,4 @@ var p = new Person()
 };
 
 p.Name = "Test"; // build hiba, utólag nem megváltoztatható
-```
-
-## 8. Feladat – Generikus osztályok
-
-Megjegyzés: erre a feladatra jó eséllyel nem marad idő. Ez esetben célszerű a feladatot gyakorlásképpen otthon elvégezni.
-
-A .NET generikus osztályai hasonlítanak C++ nyelv template osztályaihoz, de közelebb állnak a Java-ban már megismert generikus osztályokhoz. A segítségükkel általános (több típusra is működő), de ugyanakkor típusbiztos osztályokat hozhatunk létre. Generikus osztályok nélkül, ha általánosan szeretnénk kezelni egy problémát, akkor `object` típusú adatokat használunk (mert .NET-ben minden osztály az `object` osztályból származik). Ez a helyzet például az `ArrayList`-tel is, ami egy általános célú gyűjtemény, tetszőleges, `object` típusú elemek tárolására alkalmas. Lássunk egy példát az `ArrayList` használatára:
-
-```csharp
-var list = new ArrayList();
-list.Add(1);
-list.Add(2);
-list.Add(3);
-for (int n = 0; n < list.Count; n++)
-{
-    // Castolni kell, különben nem fordul
-    int i = (int)list[n];
-    Console.WriteLine($"Value: {i}");
-}
-```
-
-A fenti megoldással a következő problémák adódnak:
-
-- Az `ArrayList` minden egyes elemet `object`-ként tárol.
-- Amikor hozzá szeretnénk férni a lista egy eleméhez, mindig a megfelelő típusúvá kell cast-olni.
-- Nem típusbiztos. A fenti példában semmi nem akadályoz meg abban (és semmilyen hibaüzenet sem jelzi), hogy az `int` típusú adatok mellé  beszúrjunk a listába egy másik típusú objektumot. Ilyenkor csak a lista bejárása során kapnánk hibát, amikor a nem `int` típust `int` típusúra próbálunk castolni. Generikus gyűjtemények használatakor az ilyen hibák már a fordítás során kiderülnek.
-- Érték típusú adatok tárolásakor a lista lassabban működik, mert az érték típust először be kell dobozolni (boxing), hogy az `object`-ként (azaz referencia típusként) tárolható legyen.
-
-A fenti probléma megoldása egy generikus lista használatával a következőképpen néz ki (a gyakorlat során csak a kiemelt sort módosítsuk a korábban begépelt példában):
-
-```csharp hl_lines="1 7"
-var list = new List<int>();
-list.Add(1);
-list.Add(2);
-list.Add(3);
-for (int n = 0; n < list.Count; n++)
-{
-    int i = list[n]; // Nem kell cast-olni
-    Console.WriteLine($"Value: {i}");
-}
 ```
