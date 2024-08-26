@@ -522,11 +522,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-tovabbi-nyelvi-konstrukciok" class="md-nav__link">
-    7. További nyelvi konstrukciók
+  <a href="#7-feladat-generikus-osztalyok" class="md-nav__link">
+    7. Feladat – Generikus osztályok
   </a>
   
-    <nav class="md-nav" aria-label="7. További nyelvi konstrukciók">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-tovabbi-nyelvi-konstrukciok-opcionalis-temakorok-nem-tananyag" class="md-nav__link">
+    8. További nyelvi konstrukciók - opcionális témakörök (nem tananyag)
+  </a>
+  
+    <nav class="md-nav" aria-label="8. További nyelvi konstrukciók - opcionális témakörök (nem tananyag)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -552,13 +559,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-feladat-generikus-osztalyok" class="md-nav__link">
-    8. Feladat – Generikus osztályok
-  </a>
   
 </li>
       
@@ -833,11 +833,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-tovabbi-nyelvi-konstrukciok" class="md-nav__link">
-    7. További nyelvi konstrukciók
+  <a href="#7-feladat-generikus-osztalyok" class="md-nav__link">
+    7. Feladat – Generikus osztályok
   </a>
   
-    <nav class="md-nav" aria-label="7. További nyelvi konstrukciók">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-tovabbi-nyelvi-konstrukciok-opcionalis-temakorok-nem-tananyag" class="md-nav__link">
+    8. További nyelvi konstrukciók - opcionális témakörök (nem tananyag)
+  </a>
+  
+    <nav class="md-nav" aria-label="8. További nyelvi konstrukciók - opcionális témakörök (nem tananyag)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -863,13 +870,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-feladat-generikus-osztalyok" class="md-nav__link">
-    8. Feladat – Generikus osztályok
-  </a>
   
 </li>
       
@@ -1369,11 +1369,7 @@ A láthatóság szabályozása autoimplementált és nem autoimplementált tulaj
 </code></pre></div>
 </div>
 <h2 id="6-feladat-lambda-kifejezesek">6. Feladat – Lambda kifejezések<a class="headerlink" href="#6-feladat-lambda-kifejezesek" title="Permanent link">&para;</a></h2>
-<p>Az érintett témakörök az előadásanyagban részletesen szerepelnek, itt nem ismételjük meg őket Lásd „Előadás 02 - Nyelvi eszközök.pdf” dokumentum "Lambda expression (lambda kifejezés)" fejezete. A kulcselem a <code>=&gt;</code> (lambda operátor), mely segítségével <strong>lambda kifejezések</strong>, vagyis névtelen függvények definiálására van lehetőség.</p>
-<div class="admonition note">
-<p class="admonition-title"><code>Action és Func</code></p>
-<p>A .NET beépített <code>Func</code> és <code>Action</code> generikus delegate típusokra itt idő hiányában nem térünk ki. Ettől még beletartoznak az alapanyagba!</p>
-</div>
+<p>A kulcselem a <code>=&gt;</code> (lambda operátor), mely segítségével <strong>lambda kifejezések</strong>, vagyis névtelen függvények definiálására van lehetőség.</p>
 <p>Az előző, 5. feladatot oldjuk meg a következőképpen: ne adjunk meg külön szűrőfüggvényt, hanem a szűrési logikát egy lambda kifejezés formájában adjuk meg a <code>FindAll</code> műveletnek.</p>
 <p>Ehhez mindössze egy sort kell megváltoztatni:</p>
 <div class="highlight"><pre><span></span><code><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">FindAll</span><span class="p">((</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
@@ -1393,7 +1389,43 @@ A láthatóság szabályozása autoimplementált és nem autoimplementált tulaj
 <li>a paraméter körüli zárójelet elhagyhattuk (mert csak egy paraméter van)</li>
 <li>a <code>=&gt;</code> jobb oldalán elhagyhattuk a {} zárójeleket és a <code>return</code>-t (mert egyetlen kifejezésből állt a függvény törzse, mellyel a függvény visszatér).</li>
 </ul>
-<h2 id="7-tovabbi-nyelvi-konstrukciok">7. További nyelvi konstrukciók<a class="headerlink" href="#7-tovabbi-nyelvi-konstrukciok" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title"><code>Action és Func</code></p>
+<p>A .NET beépített <code>Func</code> és <code>Action</code> generikus delegate típusokra a tárgy keretében nem térünk ki.</p>
+</div>
+<h2 id="7-feladat-generikus-osztalyok">7. Feladat – Generikus osztályok<a class="headerlink" href="#7-feladat-generikus-osztalyok" title="Permanent link">&para;</a></h2>
+<p>Megjegyzés: erre a feladatra jó eséllyel nem marad idő. Ez esetben célszerű a feladatot gyakorlásképpen otthon elvégezni.</p>
+<p>A .NET generikus osztályai hasonlítanak C++ nyelv template osztályaihoz, de közelebb állnak a Java-ban már megismert generikus osztályokhoz. A segítségükkel általános (több típusra is működő), de ugyanakkor típusbiztos osztályokat hozhatunk létre. Generikus osztályok nélkül, ha általánosan szeretnénk kezelni egy problémát, akkor <code>object</code> típusú adatokat használunk (mert .NET-ben minden osztály az <code>object</code> osztályból származik). Ez a helyzet például az <code>ArrayList</code>-tel is, ami egy általános célú gyűjtemény, tetszőleges, <code>object</code> típusú elemek tárolására alkalmas. Lássunk egy példát az <code>ArrayList</code> használatára:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Castolni kell, különben nem fordul</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">list</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Value: {i}&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A fenti megoldással a következő problémák adódnak:</p>
+<ul>
+<li>Az <code>ArrayList</code> minden egyes elemet <code>object</code>-ként tárol.</li>
+<li>Amikor hozzá szeretnénk férni a lista egy eleméhez, mindig a megfelelő típusúvá kell cast-olni.</li>
+<li>Nem típusbiztos. A fenti példában semmi nem akadályoz meg abban (és semmilyen hibaüzenet sem jelzi), hogy az <code>int</code> típusú adatok mellé  beszúrjunk a listába egy másik típusú objektumot. Ilyenkor csak a lista bejárása során kapnánk hibát, amikor a nem <code>int</code> típust <code>int</code> típusúra próbálunk castolni. Generikus gyűjtemények használatakor az ilyen hibák már a fordítás során kiderülnek.</li>
+<li>Érték típusú adatok tárolásakor a lista lassabban működik, mert az érték típust először be kell dobozolni (boxing), hogy az <code>object</code>-ként (azaz referencia típusként) tárolható legyen.</li>
+</ul>
+<p>A fenti probléma megoldása egy generikus lista használatával a következőképpen néz ki (a gyakorlat során csak a kiemelt sort módosítsuk a korábban begépelt példában):</p>
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="kt">var</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w"> </span><span class="c1">// Nem kell cast-olni</span>
+</span><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Value: {i}&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="8-tovabbi-nyelvi-konstrukciok-opcionalis-temakorok-nem-tananyag">8. További nyelvi konstrukciók - opcionális témakörök (nem tananyag)<a class="headerlink" href="#8-tovabbi-nyelvi-konstrukciok-opcionalis-temakorok-nem-tananyag" title="Permanent link">&para;</a></h2>
 <p>Az alábbiakban kitekintünk néhány olyan C# nyelvi elemre, melyek a napi programozási feladatok során egyre gyakrabban használatosak. A gyakorlat során jó eséllyel már nem marad idő ezek áttekintésére.</p>
 <h3 id="kifejezestorzsu-tagok-expression-bodied-members">Kifejezéstörzsű tagok (Expression-bodied members)<a class="headerlink" href="#kifejezestorzsu-tagok-expression-bodied-members" title="Permanent link">&para;</a></h3>
 <p>Időnként olyan rövid függvényeket, illetve tulajdonságok esetén kifejezetten gyakran olyan rövid get/set/init definíciókat írunk, melyek <strong>egyetlen kifejezésből</strong> állnak. Ez esetben a függvény, illetve tulajdonság esetén a get/set/init törzse megadható ún. <strong>kifejezéstörzsű tagok (expression-bodied members)</strong> szintaktikával is, a <code>=&gt;</code> alkalmazásával. Ez akkor is megtehető, ha az adott kontextusban van visszatérési érték (return utasítás), akár nincs.</p>
@@ -1447,38 +1479,6 @@ Mint látható, elhagytuk a {} zárójeleket és a <code>return</code> utasítá
 
 <span class="n">p</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// build hiba, utólag nem megváltoztatható</span>
 </code></pre></div>
-<h2 id="8-feladat-generikus-osztalyok">8. Feladat – Generikus osztályok<a class="headerlink" href="#8-feladat-generikus-osztalyok" title="Permanent link">&para;</a></h2>
-<p>Megjegyzés: erre a feladatra jó eséllyel nem marad idő. Ez esetben célszerű a feladatot gyakorlásképpen otthon elvégezni.</p>
-<p>A .NET generikus osztályai hasonlítanak C++ nyelv template osztályaihoz, de közelebb állnak a Java-ban már megismert generikus osztályokhoz. A segítségükkel általános (több típusra is működő), de ugyanakkor típusbiztos osztályokat hozhatunk létre. Generikus osztályok nélkül, ha általánosan szeretnénk kezelni egy problémát, akkor <code>object</code> típusú adatokat használunk (mert .NET-ben minden osztály az <code>object</code> osztályból származik). Ez a helyzet például az <code>ArrayList</code>-tel is, ami egy általános célú gyűjtemény, tetszőleges, <code>object</code> típusú elemek tárolására alkalmas. Lássunk egy példát az <code>ArrayList</code> használatára:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
-<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
-<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
-<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="c1">// Castolni kell, különben nem fordul</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">list</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
-<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Value: {i}&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>A fenti megoldással a következő problémák adódnak:</p>
-<ul>
-<li>Az <code>ArrayList</code> minden egyes elemet <code>object</code>-ként tárol.</li>
-<li>Amikor hozzá szeretnénk férni a lista egy eleméhez, mindig a megfelelő típusúvá kell cast-olni.</li>
-<li>Nem típusbiztos. A fenti példában semmi nem akadályoz meg abban (és semmilyen hibaüzenet sem jelzi), hogy az <code>int</code> típusú adatok mellé  beszúrjunk a listába egy másik típusú objektumot. Ilyenkor csak a lista bejárása során kapnánk hibát, amikor a nem <code>int</code> típust <code>int</code> típusúra próbálunk castolni. Generikus gyűjtemények használatakor az ilyen hibák már a fordítás során kiderülnek.</li>
-<li>Érték típusú adatok tárolásakor a lista lassabban működik, mert az érték típust először be kell dobozolni (boxing), hogy az <code>object</code>-ként (azaz referencia típusként) tárolható legyen.</li>
-</ul>
-<p>A fenti probléma megoldása egy generikus lista használatával a következőképpen néz ki (a gyakorlat során csak a kiemelt sort módosítsuk a korábban begépelt példában):</p>
-<div class="highlight"><pre><span></span><code><span class="hll"><span class="kt">var</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
-</span><span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
-<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
-<span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="hll"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w"> </span><span class="c1">// Nem kell cast-olni</span>
-</span><span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Value: {i}&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -1489,8 +1489,8 @@ Mint látható, elhagytuk a {} zárójeleket és a <code>return</code> utasítá
         </path>
       </svg>
     </span>
-    <span title="2024. március 5. 11:53:52">
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-03-05T11:53:52+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-03-05</span>
+    <span title="2024. augusztus 26. 22:14:32">
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-26T22:14:32+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-26</span>
     </span>
   </span>
 
@@ -1565,5 +1565,7 @@ Mint látható, elhagytuk a {} zárójeleket és a <code>return</code> utasítá
         <script src="../../js/timeago_mkdocs_material.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
