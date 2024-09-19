@@ -32,10 +32,10 @@ Az alábbiakban ezekre is kitérünk.
 
 Két lehetőséget nézünk meg alább:
 
-- Klónozás a GitHub webes felületéről indulva Visual Studioban
+- Klónozás Visual Studioban
 - Klónozás parancssorból
 
-### Clone a GitHub webes felületéről indulva Visual Studio-ban
+### Klónozás Visual Studio-ban
 
 Egy (házi feladathoz tartozó) repository klónozásra számos mód van, egy lehetőség a következő. Nyissuk meg az elkészült repository online oldalát, melyre több módon eljuthatunk. Lehetőségek pl.:
 
@@ -47,25 +47,21 @@ Az oldal képe nagyjából megfelel a következőnek (az mindenképpen különbs
 
 ![GitHub repo oldal](images/github-repo-page.png)
 
-Kattintsunk a zöld színű *Code* gombon, majd a lenyíló menüben az *"Open in Visual Studio"* linkre:
-
-![GitHub repo oldal - Code gomb](images/github-code-button-open.png)
-
-A böngészőnk ekkor jó eséllyel feldob egy ablakot (pl. a Chrome/Edge esetében a címsor alatt) melyben egy külön gombkattintással (*Open…*) tudjuk indítani a Visual Studio-t. A felkínált lehetőségnek lehet, kissé fura a neve, ha *"Microsoft Visual Studio Web Protocol Handler Selector"* néven hivatkozik rá, válasszuk/engedélyezzük ki bátran. Illetve, itt célszerű az "Always allow github.com to open links ..." vagy hasonló szövegű jelölőnégyzetet is pipálni.
-Ha minden jól megy, a Visual Studio elindul, és indulás után feldob egy ablakot, melyben a "Repository location" ki is van töltve a repository-nk URL-jével. A Path alatt adjuk meg, hogy hova szeretnénk a háttértárunkon clone-ozni, majd kattintsunk a *Clone* gombra:
+Indítsuk el a Visual Studiot, és a megjelenő ablak jobb oldalán kattintsunk a "Clone a repository" gombon. Ekkor a következő ablak jelenik meg:
 
 ![Repository clone Visual Studionban](images/vs-clone-a-repository.png)
 
-!!!note "Alternatív klónozási lehetőség Visual Studioban"
-    Ha nem működik a böngészőablakban az *"Open in Visual Studio"* vagy *"Microsoft Visual Studio Web Protocol Handler Selector"* hivatkozás, akkor indulhatunk egyből a Visual Studio-ból is. Csak indítsuk el a Visual Studio-t, és a startup ablakban válasszuk jobboldalt a *"Clone Repository"* gombot (vagy a startup ablakot átugorva válasszuk ki a *"Git/Clone Repository menüt"* a VS főablakában), melynek hatására a fenti ablak jelenik meg, a Repository URL-be pedig írjuk be a repónk URL-jét. A *Clone*-ra kattintva néhány másodperc alatt a repository a megadott célmappába klónozódik.
+Itt a "Repository location" mezőbe másoljuk be böngészőablak címsorából a repository-nk url-jét. Az útvonal (Path) a létrehozandó projekt útvonala a fájlrendszerünkben, tetszés szerint megadható.
 
-A klónozást követően pl. Windows Explorer-ben meg tudjuk tekinteni a létrehozott mappákat és fájlokat:
+A *Clone*-ra kattintva néhány másodperc alatt a repository a megadott célmappába klónozódik.
 
-![Git repository a fájlrendszerben](images/git-folder-in-explorer.png)
+A klónozást követően pl. a Windows Fájlkezelőben (File Explorer)-ben meg tudjuk tekinteni a létrehozott mappákat és fájlokat:
 
-Ebből jól látható, hogy egy Git repository nem más, mint mappák és fájlok gyűjteménye, valamint egy a gyökérben található .git mappa, mely (némi egyszerűsítéssel élve) az egyes fájlok verziótörténetét tartalmazza. A munka megkezdéséhez csak meg kell nyissuk az adott házi feladathoz tartozó .sln kiterjesztésű solution fájlt (pl. duplakatt Windows Explorerben).
+![Repo a fájlrendszerben](images/git-folder-in-explorer.png)
 
-### Clone parancssorból
+Ebből jól látható, hogy egy Git repository nem más, mint mappák és fájlok gyűjteménye, valamint egy a gyökérben található .git mappa, mely - némi egyszerűsítéssel élve - az egyes fájlok verziótörténetét tartalmazza (a .git mappa "rejtett" tulajdonságú, csak akkor látható, ha a fájlkezelőben a rejtett fájlok megjelenítését is engedélyezzük). A munka megkezdéséhez csak meg kell nyissuk az adott házi feladathoz tartozó .sln kiterjesztésű solution fájlt (pl. duplakatt a Fájlkezelőben).
+
+### Klónozás parancssorból
 
 Alternatív lehetőség a parancssor használata. Parancssorban navigáljunk abba a mappába, ahová a forráskódot ki szeretnénk clone-ozni, és itt adjuk ki a következő parancsot:
 `git clone <repo url>`
