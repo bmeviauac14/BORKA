@@ -8,7 +8,7 @@ A házi feladat elkészítése Windows 10 vagy 11 operációs rendszeren, Visual
 
 Az alábbiakat csak akkor érdemes kinyitni és megnézni, ha valamiért nem nyílik meg Visual Studioban egy űrlap szerkesztőfelülete.
 
-??? "Ha nem nyílik meg az űrlap szerkesztésre"
+!!! "Ha nem nyílik meg az űrlap szerkesztésre"
     A Visual Studio 2022 a Git-ből frissen kiklónozott forrás esetén (amikor még nem létezik egy .csproj.user kiterjesztésű fájl) az űrlapokat  - valószínűsíthetően egy bug miatt – időnként nem hajlandó megnyitni szerkesztő módban (szerencsére ez nagyon ritka). A solution megnyitása után ez esetben ezt látjuk:
 
     ![VS designer probléma](images/vs-designer-issue-1.png)
