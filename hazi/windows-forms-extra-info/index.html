@@ -441,6 +441,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opc-hf-1-felhasznaloi-felulet-kialakitasa/" class="md-nav__link">
+        Opcionális Windows Forms házi feladat
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -516,14 +530,16 @@
 <p>A házi feladat elkészítése Windows 10 vagy 11 operációs rendszeren, Visual Studio 2022-vel történik. Windows-ra mindenképpen szükség van a fejlesztéhez és az alkalmazás futásához is. Lényeges, hogy a Visual Studio alatt telepítve legyen a ".NET Desktop development” workload (ez a Visual Studio installerben ellenőrizhető/adható meg). Ha valakinek nem áll rendelkezésére ilyen környezet, BME Cloud hozzáférés a tárgyfelelősnél igényelhető.</p>
 <h2 id="visual-studio-designer-hiba">Visual Studio designer hiba<a class="headerlink" href="#visual-studio-designer-hiba" title="Permanent link">&para;</a></h2>
 <p>Az alábbiakat csak akkor érdemes kinyitni és megnézni, ha valamiért nem nyílik meg Visual Studioban egy űrlap szerkesztőfelülete.</p>
-<details>
-<summary>Ha nem nyílik meg az űrlap szerkesztésre</summary>
-<p>A Visual Studio 2022 a Git-ből frissen kiklónozott forrás esetén (amikor még nem létezik egy .csproj.user kiterjesztésű fájl) az űrlapokat  - valószínűsíthetően egy bug miatt – időnként nem hajlandó megnyitni szerkesztő módban (szerencsére ez nagyon ritka). A solution megnyitása után ez esetben ezt látjuk:</p>
-<p><a class="glightbox" href="images/vs-designer-issue-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VS designer probléma" src="images/vs-designer-issue-1.png" /></a></p>
-<p>A probléma az, hogy a <code>Form1.cs</code> előtti ikon (pirossal bekeretezve) nem egy űrlap, hanem egy zöld C# ikon. Ez esetben hiába kattintunk duplán a fájlon, nem az űrlap szerkesztő nyílik meg, hanem csak a forrásfájl. A megoldás ez esetben a következő: a Build menüben válasszuk ki a „Rebuild solution” menüt, majd a Build menüben a „Clean solution” menüt, és várjunk egy kicsit. Ekkor pár másodperc múlva a Solution Explorerben az űrlapunk ikonja megváltozik:</p>
-<p><a class="glightbox" href="images/vs-designer-issue-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VS designer probléma javítva" src="images/vs-designer-issue-2.png" /></a></p>
-<p>Most már meg tudjuk nyitni az űrlapot szerkesztésre, ha duplán kattintunk a Solution Explorerben a fenti csomóponton.</p>
-</details>
+<p>!!! "Ha nem nyílik meg az űrlap szerkesztésre"
+    A Visual Studio 2022 a Git-ből frissen kiklónozott forrás esetén (amikor még nem létezik egy .csproj.user kiterjesztésű fájl) az űrlapokat  - valószínűsíthetően egy bug miatt – időnként nem hajlandó megnyitni szerkesztő módban (szerencsére ez nagyon ritka). A solution megnyitása után ez esetben ezt látjuk:</p>
+<div class="highlight"><pre><span></span><code>![VS designer probléma](images/vs-designer-issue-1.png)
+
+A probléma az, hogy a `Form1.cs` előtti ikon (pirossal bekeretezve) nem egy űrlap, hanem egy zöld C# ikon. Ez esetben hiába kattintunk duplán a fájlon, nem az űrlap szerkesztő nyílik meg, hanem csak a forrásfájl. A megoldás ez esetben a következő: a Build menüben válasszuk ki a „Rebuild solution” menüt, majd a Build menüben a „Clean solution” menüt, és várjunk egy kicsit. Ekkor pár másodperc múlva a Solution Explorerben az űrlapunk ikonja megváltozik:
+
+![VS designer probléma javítva](images/vs-designer-issue-2.png)
+
+Most már meg tudjuk nyitni az űrlapot szerkesztésre, ha duplán kattintunk a Solution Explorerben a fenti csomóponton.
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -534,8 +550,8 @@
         </path>
       </svg>
     </span>
-    <span title="2024. szeptember 28. 10:33:21">
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-09-28T10:33:21+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-28</span>
+    <span title="2024. szeptember 28. 10:37:50">
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-09-28T10:37:50+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-28</span>
     </span>
   </span>
 
