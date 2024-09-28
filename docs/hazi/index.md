@@ -11,3 +11,7 @@ Minden házi feladat megoldását egy személyre szóló git repository-ban kell
     A házik elkészítése és beadás során az itt leírtak szerint kell eljárnod. A nem ilyen formában beadott házi feladatokat nem értékeljük.
 
 A házi feladatokhoz egy előellenőrző is tartozik, erről [itt](./eloellenorzes-ertekeles/index.md) olvashatsz bővebben.
+
+## Windows Forms alapú házi feladatok
+
+A Windows Forms alapú házi feladatok kapcsán némi extra információ (rendszerkövetelmények, esetleges Visual Studio problémák kezelése) [itt](./windows-forms-extra-info/index.md).
