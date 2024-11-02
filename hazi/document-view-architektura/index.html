@@ -673,8 +673,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#iview-kodduplikacioja-1-imsc-pont" class="md-nav__link">
-    IView kódduplikációja (1 iMSc pont)
+  <a href="#iview-kodduplikacioja" class="md-nav__link">
+    IView kódduplikációja
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafikon-gorgetese" class="md-nav__link">
+    Grafikon görgetése
   </a>
   
 </li>
@@ -898,8 +905,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#iview-kodduplikacioja-1-imsc-pont" class="md-nav__link">
-    IView kódduplikációja (1 iMSc pont)
+  <a href="#iview-kodduplikacioja" class="md-nav__link">
+    IView kódduplikációja
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafikon-gorgetese" class="md-nav__link">
+    Grafikon görgetése
   </a>
   
 </li>
@@ -1328,12 +1342,27 @@
 </ul>
 </div>
 <h2 id="opcionalis-feladatok">Opcionális feladatok<a class="headerlink" href="#opcionalis-feladatok" title="Permanent link">&para;</a></h2>
-<h3 id="iview-kodduplikacioja-1-imsc-pont"><code>IView</code> kódduplikációja (1 iMSc pont)<a class="headerlink" href="#iview-kodduplikacioja-1-imsc-pont" title="Permanent link">&para;</a></h3>
+<h3 id="iview-kodduplikacioja"><code>IView</code> kódduplikációja<a class="headerlink" href="#iview-kodduplikacioja" title="Permanent link">&para;</a></h3>
 <p>Az <code>IView</code> egy interfész, ezért a <code>GetDocument</code>/<code>Update</code> stb. kódját nem lehet implementálni benne. Helyette minden nézetben „copy-paste”-tel duplikálni kell a megfelelő kódot. Szüntessük meg ezt a kódduplikációt az alkalmazásban! A megoldást előbb mindenképpen magad próbáld kitalálni, csak ha elakadsz, akkor fordulj az alábbi kinyitható segítséghez:</p>
 <details class="tip">
 <summary>Segítség</summary>
 <p>Egy <code>ViewBase</code> nevű osztályt kell írni, mely a <code>UserControl</code>-ból származik, és implementálja az <code>IView</code> interfészt. A nézeteinket a <code>UserControl</code> helyett a <code>ViewBase</code> osztályból kell származtatni.</p>
 </details>
+<h3 id="grafikon-gorgetese">Grafikon görgetése<a class="headerlink" href="#grafikon-gorgetese" title="Permanent link">&para;</a></h3>
+<p>Biztosítsunk lehetőséget a grafikon görgetésére!</p>
+<p>A megvalósításban használhatunk egyedi scrollbar-t is, de ennél egyszerűbb a <code>UserControl</code> autoscroll támogatását felhasználni (<code>UserControl.AutoScroll</code> és <code>UserControl.AutoScrollMinSize</code>).</p>
+<p>A kirajzolás során a rajzot az aktuális scroll pozíciónak megfelelően el kell tolni. Erre a legegyszerűbb megoldás, ha egy, a scroll pozíciónak megfelelő eltolást eredményező transzformációs mátrixot állítunk be a <code>Graphics</code> objektumra a kirajzolás előtt (<code>g.Transform</code> beállítása egy <code>new Matrix(1, 0, 0, 1, AutoScrollPosition.X, AutoScrollPosition.Y)</code> objektumra).</p>
+<p>A megközelítés előnye a viszonylagos egyszerűsége. Hátránya, hogy ha nagyon sok jelünk van, de annak csak egy kis szelete látható egy adott pillanatban, attól még a <code>Paint</code> függvényünkben a nem látható jeleket is kirajzoljuk. Egy optimalizált megoldásban csak a látható tartományt célszerű megjeleníteni.</p>
+<div class="admonition example">
+<p class="admonition-title">BEADANDÓ</p>
+<p>Készíts egy képernyőmentést <code>FeladatIMSc-2.png</code> néven az alábbiak szerint:</p>
+<ul>
+<li>Indítsd el az alkalmazást. Nyiss meg vagy hozz létre egy dokumentumot, hogy látszódjanak a koordinátatengelyek és a kirajzolt jelek, valamint a görgetősáv (scrollbar). Ha szükséges, méretezd át kisebbre, hogy ne foglaljon sok helyet a képernyőn,</li>
+<li>a „háttérben” a Visual Studio legyen, a <code>GraphicsSignalView.cs</code> releváns része megnyitva,</li>
+<li>a VS <em>View/Full Screen</em> menüjével kapcsolj ideiglenesen <em>Full Screen</em> nézetre, hogy a zavaró panelek ne vegyenek el semmi helyet,</li>
+<li>az előtérben pedig az alkalmazásod ablaka.</li>
+</ul>
+</div>
 
   <hr>
 <div class="md-source-file">
@@ -1344,8 +1373,8 @@
         </path>
       </svg>
     </span>
-    <span title="2024. november 2. 19:02:17">
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-11-02T19:02:17+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-02</span>
+    <span title="2024. november 2. 19:08:40">
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-11-02T19:08:40+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-02</span>
     </span>
   </span>
 
