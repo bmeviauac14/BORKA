@@ -456,9 +456,26 @@ Az alkalmazást futtatva a _Window_ menüből ugyanahhoz a dokumentumhoz hozzunk
 
 ## Opcionális feladatok
 
-
-### `IView` kódduplikációja (1 iMSc pont)
+### `IView` kódduplikációja
 
 Az `IView` egy interfész, ezért a `GetDocument`/`Update` stb. kódját nem lehet implementálni benne. Helyette minden nézetben „copy-paste”-tel duplikálni kell a megfelelő kódot. Szüntessük meg ezt a kódduplikációt az alkalmazásban! A megoldást előbb mindenképpen magad próbáld kitalálni, csak ha elakadsz, akkor fordulj az alábbi kinyitható segítséghez:
 ??? tip "Segítség"
     Egy `ViewBase` nevű osztályt kell írni, mely a `UserControl`-ból származik, és implementálja az `IView` interfészt. A nézeteinket a `UserControl` helyett a `ViewBase` osztályból kell származtatni.
+
+### Grafikon görgetése
+
+Biztosítsunk lehetőséget a grafikon görgetésére!
+
+A megvalósításban használhatunk egyedi scrollbar-t is, de ennél egyszerűbb a `UserControl` autoscroll támogatását felhasználni (`UserControl.AutoScroll` és `UserControl.AutoScrollMinSize`).
+
+A kirajzolás során a rajzot az aktuális scroll pozíciónak megfelelően el kell tolni. Erre a legegyszerűbb megoldás, ha egy, a scroll pozíciónak megfelelő eltolást eredményező transzformációs mátrixot állítunk be a `Graphics` objektumra a kirajzolás előtt (`g.Transform` beállítása egy `new Matrix(1, 0, 0, 1, AutoScrollPosition.X, AutoScrollPosition.Y)` objektumra).
+
+A megközelítés előnye a viszonylagos egyszerűsége. Hátránya, hogy ha nagyon sok jelünk van, de annak csak egy kis szelete látható egy adott pillanatban, attól még a `Paint` függvényünkben a nem látható jeleket is kirajzoljuk. Egy optimalizált megoldásban csak a látható tartományt célszerű megjeleníteni.
+
+!!! example "BEADANDÓ"
+    Készíts egy képernyőmentést `FeladatIMSc-2.png` néven az alábbiak szerint:
+
+    - Indítsd el az alkalmazást. Nyiss meg vagy hozz létre egy dokumentumot, hogy látszódjanak a koordinátatengelyek és a kirajzolt jelek, valamint a görgetősáv (scrollbar). Ha szükséges, méretezd át kisebbre, hogy ne foglaljon sok helyet a képernyőn,
+    - a „háttérben” a Visual Studio legyen, a `GraphicsSignalView.cs` releváns része megnyitva,
+    - a VS _View/Full Screen_ menüjével kapcsolj ideiglenesen _Full Screen_ nézetre, hogy a zavaró panelek ne vegyenek el semmi helyet,
+    - az előtérben pedig az alkalmazásod ablaka.
