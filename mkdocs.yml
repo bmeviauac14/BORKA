@@ -93,3 +93,4 @@ nav:
   - "Önálló/házi feladatok":
       - 'Útmutató': hazi/index.md
       - 'Opcionális Windows Forms házi feladat': hazi/opc-hf-1-felhasznaloi-felulet-kialakitasa/index.md
+      - 'Document-View architektúra házi feladat': hazi/document-view-architektura/index.md
